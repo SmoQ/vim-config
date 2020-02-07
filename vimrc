@@ -9,7 +9,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'valloric/youcompleteme'
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'jnurmine/Zenburn'
@@ -28,6 +28,9 @@ filetype plugin indent on    " required
 
 let mapleader=","
 
+set colorcolumn=88
+highlight ColorColumn ctermbg=233
+
 " ack progrmming grep
 nmap <leader>a <Esc>:Ack!
 
@@ -39,6 +42,12 @@ set foldlevel=99
 nnoremap <space> za
 " folded docstring code
 let g:SimpylFold_docstring_preview=1
+
+" frontend config
+au BufNewFile,BufRead *.js, *.html, *.css, *.ts
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
 
 " UTF_8 support
 set encoding=utf-8
