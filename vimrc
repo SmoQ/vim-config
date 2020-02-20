@@ -21,6 +21,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'preservim/nerdcommenter'
 Plugin 'mileszs/ack.vim'
+" typescript
+Plugin 'leafgarland/typescript-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -124,3 +126,10 @@ nnoremap <space> za
 
 "js stuff"
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
+" Number of spaces that a pre-existing tab is equal to.
+au BufRead,BufNewFile *.ts set tabstop=2
+
+"spaces for indents
+au BufRead,BufNewFile *.ts set shiftwidth=2
+au BufRead,BufNewFile *.ts set softtabstop=2
