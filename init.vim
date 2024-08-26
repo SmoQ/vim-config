@@ -4,6 +4,8 @@ Plug 'preservim/nerdtree'
 Plug 'github/copilot.vim'
 Plug 'jnurmine/Zenburn'
 Plug 'dense-analysis/ale'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
+Plug 'nvim-lua/plenary.nvim'
 
 call plug#end()
 
@@ -48,3 +50,9 @@ let g:ale_fixers = {
 
 " Enables autoformatting when a file is saved
 let g:ale_fix_on_save = 1
+
+" Telescope configuration
+nnoremap <leader>ff :Telescope find_files<CR>
+nnoremap <leader>fg :Telescope live_grep<CR>
+nnoremap <leader>fb :Telescope buffers<CR>
+nnoremap <leader>fh :Telescope help_tags<CR>
